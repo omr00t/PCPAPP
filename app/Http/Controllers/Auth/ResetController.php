@@ -99,14 +99,14 @@ class ResetController extends Controller
 
                 
 
-                if(!$diff_in_Hours < 24)
+                if($diff_in_Hours < 24)
                 {
                     return view('auth.passwords.confirm')
                     ->with('token', $PasswordResets_token);
                     
                 }
                 else{
-                    redirect()->route('login')->with(session()->flash('alert-danger', 'The password recovery link has expired'));
+                    return redirect()->route('login')->with(session()->flash('alert-danger', 'The password recovery link has expired'));
                 }
 
         }
