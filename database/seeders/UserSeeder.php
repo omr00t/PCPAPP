@@ -16,16 +16,17 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        
         DB::table('users')->insert([
-            'username' => Str::random(10),
-            'first_name' => Str::random(10),
-            'last_name' => Str::random(10),
-            'email' => Str::random(10).'@email.com',
+            'username' => "admin",
+            'first_name' => "Yousuf",
+            'last_name' => "Alhajri",
+            'email' => "joe@omani.cloud",
             'password' => Hash::make('password'),
-            'gender' => Str::between('Male', 'Female'),
+            'gender' => "Male",
             'is_verified' => 1,
+            'role' => "admin",
+            'about' => "I'm the best admin, for sure.",
+            'status' => 1,
         ]);
-        
     }
 }
