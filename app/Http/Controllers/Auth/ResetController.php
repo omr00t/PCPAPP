@@ -42,7 +42,7 @@ class ResetController extends Controller
                 $PasswordResets->save();
 
 
-                MailController::sendResetPassEmail($user->first_name, $user->last_name, $user->email, $PasswordResets->token);
+                // MailController::sendResetPassEmail($user->first_name, $user->last_name, $user->email, $PasswordResets->token);
                 return redirect()->route('login')->with(session()->flash('alert-success', 'An email has been sent to reset the password'));
             } else {
 
@@ -65,7 +65,7 @@ class ResetController extends Controller
                 $PasswordResets->save();
 
 
-                MailController::sendResetPassEmail($user->first_name, $user->last_name, $user->email, $PasswordResets->token);
+                // MailController::sendResetPassEmail($user->first_name, $user->last_name, $user->email, $PasswordResets->token);
                 return redirect()->route('login')->with(session()->flash('alert-success', 'An email has been sent to reset the password'));
 
                 }
