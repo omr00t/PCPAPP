@@ -16,7 +16,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        if(empty(DB::table('users')->get())){
+        $user = DB::table('users')->where('email', 'joe@omani.cloud')->first();
+        if ($user === null) {
             DB::table('users')->insert([
                 'username' => "admin",
                 'first_name' => "Yousuf",
